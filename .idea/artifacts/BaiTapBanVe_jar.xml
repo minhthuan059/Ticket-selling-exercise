@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BaiTapBanVe:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BaiTapBanVe_jar</output-path>
+    <root id="archive" name="BaiTapBanVe.jar">
+      <element id="module-output" name="BaiTapBanVe" />
+    </root>
+  </artifact>
+</component>
