@@ -278,7 +278,7 @@ public class Server {
                         // TODO: Xử lý đặt chổ.
                         for (Seat s : bookSeats) {
                             Seat newBookSeat = new Seat(seatMethod.getNewID(), find.getID(), s.getAreaID(), s.getRow(), s.getColumn()); // Tạo vị trí đặt với thông tin người dùng gửi.
-                            synchronized (newBookSeat) {  // Đồng bộ hóa để tránh tình trạng 1 vị trí bị đặt cùng lúc.
+                            synchronized (seatMethod) {  // Đồng bộ hóa để tránh tình trạng 1 vị trí bị đặt cùng lúc.
                                 if (!seatMethod.getSeats().contains(newBookSeat)) {  // Kiểm tra vị trí đã được đặt chưa.
                                     seatMethod.addBookedSeat(newBookSeat);  // Thêm vào list.
                                     SeatFile.appendSeatToFile(newBookSeat, seatFileName); // Thêm vào file.
@@ -1058,3 +1058,4 @@ public class Server {
         });
     }
 }
+
