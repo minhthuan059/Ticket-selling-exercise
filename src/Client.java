@@ -722,13 +722,13 @@ public class Client {
                 for (int j = indexColumn * 10; j < (indexColumn + 1) * 10; j++) {
                     if (i < currentArea.getNumberRow() && j < currentArea.getNumberColumn()){ // Trường hợp vị trí thuộc curent area.
                         // Trường hợp vị trí đã được đặt.
-                 (OrderMethod.isBookedSeatAtRowAndColumn(currentListSeatIsBookedOfArea,i+1, j+1)){
+                        if (OrderMethod.isBookedSeatAtRowAndColumn(currentListSeatIsBookedOfArea,i+1, j+1)){
                             JButton b = new JButton("<html>&#160;&#160;(" + (i + 1) + ", " + (j + 1) + ")<br>(đã đặt)</html>");
                             b.setMargin(new Insets(5, 0, 5, 0));
                             b.setPreferredSize(new Dimension(10, 10));
                             b.setBackground(Color.red);
                             b.setEnabled(false);
-                            if                mapSeatPanel.add(b);
+                            mapSeatPanel.add(b);
                         } else {  // Trường hợp vị trí chưa được đặt.
                             JButton b = new JButton("(" + (i + 1) + ", " + (j + 1) + ")");
                             b.setPreferredSize(new Dimension(10, 10));
